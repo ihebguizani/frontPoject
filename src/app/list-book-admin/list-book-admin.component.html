@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<br>
+
+<button style="left: 70%" (click)="openup()" mat-raised-button color="primary">+Ajouter un livre</button>
+<br>
+<table>
+    <tr>
+        <td>
+            <div style="display: flex">
+                <app-sidebar></app-sidebar>
+            </div>
+        </td>
+        <td>
+            <div class="col-md-9" >
+                <h2 class="text-center">liste Books</h2>
+
+                <table class="table" style="width: 80%;">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Date publication</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let book of books">
+                        <th scope="row"></th>
+                        <td>{{book.title}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.publicationDate}}</td>
+                        <td><input class="btn btn-danger" type="button" value="Effacer" (click)="openDelateBook(book.idBook)"></td>
+                        <td><input class="btn btn-danger" type="button" value="Update" (click)="openUpdateBook(book.idBook)"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+

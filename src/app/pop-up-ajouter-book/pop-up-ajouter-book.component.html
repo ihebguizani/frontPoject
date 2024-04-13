@@ -1,0 +1,26 @@
+<h1 mat-dialog-title class="text-center">{{inputdata.title}}</h1>
+
+<div class="container" >
+    <fieldset>
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label><span class="req">*</span> Title </label>
+                <input class="form-control" type="text" formControlName="title" placeholder="entrer le title de book"/>
+            </div>
+            <div class="form-group">
+                <label><span class="req">*</span> Author </label>
+                <input class="form-control" type="text" formControlName="author" placeholder="entrer le author book"/>
+            </div>
+            <label><span class="req">*</span> Catégorie </label>
+            <select  class="form-select" formControlName="categorie">
+                <option *ngFor="let categorie of categories" value="{{categorie.idCategorie}}">{{categorie.nomCategorie}}</option>
+            </select>
+
+            <div class="form-group">
+                <button type="submit" mat-raised-button color="primary">Ajouter</button>
+                <button (click)="closepop()" mat-raised-button color="warn">close</button>
+            </div>
+        </form>
+    </fieldset>
+</div>
+

@@ -1,0 +1,23 @@
+<h1 mat-dialog-title class="text-center">{{inputdata.title}}</h1>
+<div class="container">
+  <fieldset>
+    <form [formGroup]="bookForm">
+      <div class="form-group" >
+        <label><span class="req">*</span> Nom Article </label>
+        <input class="form-control" type="text" formControlName="nom"
+               placeholder="entrer le nom article"/>
+      </div>
+      <div class="form-group">
+        <label><span class="req">*</span> Prix Article</label>
+        <input class="form-control" type="text" formControlName="prix"
+               placeholder="entrer le prix article"/>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" mat-raised-button color="primary" (click)="updateNow(data.idBook)">Update</button>
+        <button (click)="closepop()" mat-raised-button color="warn">close</button>
+      </div>
+    </form>
+  </fieldset>
+</div>
+

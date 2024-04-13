@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container d-flex flex-wrap">
+  <div class="product-container">
+    <div *ngFor="let book of books" class="card-group product" >
+      <br>
+      <div class="d-lg-inline-flex">
+        <div class="card w-100 h-250">
+          <img src="assets/book.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h3 class="card-title">{{ book.title }}</h3>
+            <h5 class="card-text">Author: {{book?.author}}</h5>
+            <h5 class="card-text">Date publication:{{ book?.publicationDate }} </h5>
+          </div>
+          <div style="text-align: center" class="justify-content-md-around">
+            <button mat-raised-button color="accent" (click)="opendetaille(book.idBook)">Reserver
+            </button>
+          </div>
+          <br>
+          <div style="text-align: center" class="justify-content-md-around">
+            <button mat-raised-button color="accent" (click)="openloan(book.idBook)">loan
+            </button>
+          </div>
+          <br>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+  </div>
+</div>
+<br>
+

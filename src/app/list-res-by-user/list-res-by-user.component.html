@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<br>
+
+
+<table>
+    <tr>
+        <td>
+            <div style="display: flex">
+                <app-sidebar></app-sidebar>
+            </div>
+        </td>
+        <td>
+            <div class="col-md-9" >
+                <h2 class="text-center">liste des loan</h2>
+
+                <table class="table" style="width: 80%;">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date de Reservation</th>
+                        <th scope="col">Title Book</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let res of ress">
+                        <th scope="row"></th>
+                        <td>{{res?.resDate}}</td>
+                        <td>{{res.book.title}}</td>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+

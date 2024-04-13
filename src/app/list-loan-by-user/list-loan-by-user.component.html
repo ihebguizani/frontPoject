@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<br>
+
+
+<table>
+    <tr>
+        <td>
+            <div style="display: flex">
+                <app-sidebar></app-sidebar>
+            </div>
+        </td>
+        <td>
+            <div class="col-md-9" >
+                <h2 class="text-center">liste des loan</h2>
+
+                <table class="table" style="width: 80%;">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">start date</th>
+                        <th scope="col">end Date</th>
+                        <th scope="col">title book</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let loan of loans">
+                        <th scope="row"></th>
+                        <td>{{loan?.startDate}}</td>
+                        <td>{{loan?.endDate}}</td>
+                        <td>{{loan.book.title}}</td>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
